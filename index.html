@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Powell | Portfolio</title>
+    <!-- GitHub, Facebook, Telegram, Viber, Email လိုဂို (Icon) များ ခေါ်ယူသုံးစွဲရန် -->
+    <link rel="stylesheet" href="https://cloudflare.com" />
     <style>
       /* စာမျက်နှာ တစ်ခုလုံးအတွက် အခြေခံ ဒီဇိုင်း */
       * {
@@ -27,7 +29,7 @@
         text-align: center;
       }
 
-      /* ပရိုဖိုင် ဓာတ်ပုံ အဝိုင်းဒီဇိုင်း */
+      /* ပရိုဖိုင် လိုဂိုပုံ အဝိုင်းဒီဇိုင်း */
       .profile-img {
         width: 140px;
         height: 140px;
@@ -51,27 +53,34 @@
       header p {
         font-size: 1.1rem;
         color: #bdc3c7;
-        margin-bottom: 20px;
+        margin-bottom: 22px;
       }
 
-      /* Header ထဲက Social ခလုတ်များ */
+      /* Social ခလုတ်နှင့် လိုဂို ဒီဇိုင်း */
       .social-links {
         display: flex;
         justify-content: center;
-        gap: 12px;
+        gap: 10px;
         flex-wrap: wrap;
       }
 
       .social-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
         text-decoration: none;
         color: #ffffff;
-        padding: 8px 18px;
+        padding: 10px 18px;
         border-radius: 25px;
-        font-size: 0.95rem;
+        font-size: 0.9rem;
         font-weight: bold;
         transition:
           transform 0.2s ease,
           opacity 0.2s ease;
+      }
+
+      .social-btn i {
+        font-size: 1.15rem;
       }
 
       .social-btn:hover {
@@ -79,6 +88,7 @@
         opacity: 0.9;
       }
 
+      /* ခလုတ် တစ်ခုချင်းစီ၏ အရောင်များ */
       .btn-github {
         background-color: #333333;
         border: 1px solid #555;
@@ -86,6 +96,14 @@
 
       .btn-facebook {
         background-color: #1877f2;
+      }
+
+      .btn-telegram {
+        background-color: #0088cc;
+      }
+
+      .btn-viber {
+        background-color: #7360f2;
       }
 
       .btn-email {
@@ -178,7 +196,7 @@
       /* ဆက်သွယ်ရန် ခလုတ်အစု */
       .contact-buttons {
         display: flex;
-        gap: 12px;
+        gap: 10px;
         flex-wrap: wrap;
         margin-top: 15px;
       }
@@ -194,37 +212,55 @@
     </style>
   </head>
   <body>
+    <!-- ၁။ မိတ်ဆက် နှင့် ပရိုဖိုင် လိုဂို အပိုင်း -->
     <header>
       <img
         src="Abstract logo.png"
-        alt="Powell Profile Photo"
+        alt="Powell Profile Logo"
         class="profile-img"
       />
 
       <h1>Hello, I am Powell</h1>
       <p>Web Developer & Designer | Learning HTML, CSS, JavaScript & Python</p>
 
-      <!-- Social Media ခလုတ်များ -->
+      <!-- လိုဂိုများ ပါဝင်သော Social Media ခလုတ်များ -->
       <div class="social-links">
         <a
-          href="https://github.com"
+          href="https://github.com/powell01100-cmyk"
           target="_blank"
           class="social-btn btn-github"
-          >GitHub</a
         >
+          <i class="fa-brands fa-github"></i> GitHub
+        </a>
         <a
           href="https://www.facebook.com/share/1Ee1tvpYV5/"
           target="_blank"
           class="social-btn btn-facebook"
-          >Facebook</a
         >
-        <a href="mailto:powell01100@gmail.com" class="social-btn btn-email"
-          >Email Me</a
+          <i class="fa-brands fa-facebook"></i> Facebook
+        </a>
+        <a href="@wellpoo" target="_blank" class="social-btn btn-telegram">
+          <i class="fa-brands fa-telegram"></i> Telegram
+        </a>
+        <a
+          href="viber://chat?number=%2B959771448032"
+          target="_blank"
+          class="social-btn btn-viber"
         >
+          <i class="fa-brands fa-viber"></i> Viber
+        </a>
+        <a
+          href="https://google.com"
+          target="_blank"
+          class="social-btn btn-email"
+        >
+          <i class="fa-solid fa-envelope"></i> Email Me
+        </a>
       </div>
     </header>
 
     <div class="container">
+      <!-- ၂။ ကိုယ်ရေးအကျဉ်း -->
       <section id="about">
         <h2>About Me</h2>
         <p>
@@ -234,6 +270,7 @@
         </p>
       </section>
 
+      <!-- ၃။ ကျွမ်းကျင်မှုများ -->
       <section id="skills">
         <h2>Skills</h2>
         <ul class="skills-list">
@@ -246,6 +283,7 @@
         </ul>
       </section>
 
+      <!-- ၄။ ဖန်တီးထားသော ပရောဂျက်များ -->
       <section id="projects">
         <h2>My Projects</h2>
 
@@ -266,10 +304,7 @@
         <div class="project-card">
           <h3>2. Restaurant Menu Website</h3>
           <p>A sample responsive menu design created for a small restaurant.</p>
-          <a
-            href="https://github.com/powder-karma"
-            target="_blank"
-            class="project-link"
+          <a href="https://github.com" target="_blank" class="project-link"
             >View on GitHub &rarr;</a
           >
         </div>
@@ -283,21 +318,37 @@
           to connect with me through any platform below.
         </p>
         <div class="contact-buttons">
-          <a href="mailto:powell01100@gmail.com" class="social-btn btn-email"
-            >Send Email</a
-          >
           <a
-            href="https://facebook.com"
+            href="https://google.com"
+            target="_blank"
+            class="social-btn btn-email"
+          >
+            <i class="fa-solid fa-envelope"></i> Send Email
+          </a>
+          <a href="@wellpoo" target="_blank" class="social-btn btn-telegram">
+            <i class="fa-brands fa-telegram"></i> Telegram
+          </a>
+          <a
+            href="viber://chat?number=%2B959771448032"
+            target="_blank"
+            class="social-btn btn-viber"
+          >
+            <i class="fa-brands fa-viber"></i> Viber
+          </a>
+          <a
+            href="https://www.facebook.com/share/1Ee1tvpYV5/"
             target="_blank"
             class="social-btn btn-facebook"
-            >Message on Facebook</a
           >
+            <i class="fa-brands fa-facebook"></i> Facebook
+          </a>
           <a
             href="https://github.com"
             target="_blank"
             class="social-btn btn-github"
-            >Follow on GitHub</a
           >
+            <i class="fa-brands fa-github"></i> GitHub
+          </a>
         </div>
       </section>
     </div>
