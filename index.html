@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Portfolio</title>
+    <title>Powell | Portfolio</title>
     <style>
-      /* Base styles for the entire page */
+      /* စာမျက်နှာ တစ်ခုလုံးအတွက် အခြေခံ ဒီဇိုင်း */
       * {
         margin: 0;
         padding: 0;
@@ -19,25 +19,80 @@
         line-height: 1.6;
       }
 
-      /* Top Header section */
+      /* ထိပ်ဆုံး Header အပိုင်း */
       header {
-        background-color: #2c3e50;
+        background: linear-gradient(135deg, #2c3e50, #1a252f);
         color: #ffffff;
         padding: 60px 20px;
         text-align: center;
       }
 
+      /* ပရိုဖိုင် ဓာတ်ပုံ အဝိုင်းဒီဇိုင်း */
+      .profile-img {
+        width: 140px;
+        height: 140px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 4px solid #3498db;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        margin-bottom: 15px;
+        transition: transform 0.3s ease;
+      }
+
+      .profile-img:hover {
+        transform: scale(1.05);
+      }
+
       header h1 {
-        font-size: 2.5rem;
-        margin-bottom: 10px;
+        font-size: 2.4rem;
+        margin-bottom: 8px;
       }
 
       header p {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
         color: #bdc3c7;
+        margin-bottom: 20px;
       }
 
-      /* Main content container */
+      /* Header ထဲက Social ခလုတ်များ */
+      .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      .social-btn {
+        text-decoration: none;
+        color: #ffffff;
+        padding: 8px 18px;
+        border-radius: 25px;
+        font-size: 0.95rem;
+        font-weight: bold;
+        transition:
+          transform 0.2s ease,
+          opacity 0.2s ease;
+      }
+
+      .social-btn:hover {
+        transform: translateY(-3px);
+        opacity: 0.9;
+      }
+
+      .btn-github {
+        background-color: #333333;
+        border: 1px solid #555;
+      }
+
+      .btn-facebook {
+        background-color: #1877f2;
+      }
+
+      .btn-email {
+        background-color: #2ecc71;
+      }
+
+      /* အလယ်ပိုင်း အချက်အလက်များ */
       .container {
         max-width: 900px;
         margin: 40px auto;
@@ -48,8 +103,13 @@
         background: #ffffff;
         padding: 30px;
         margin-bottom: 30px;
-        border-radius: 8px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease;
+      }
+
+      section:hover {
+        transform: translateY(-4px);
       }
 
       h2 {
@@ -59,7 +119,7 @@
         margin-bottom: 20px;
       }
 
-      /* Skills badges */
+      /* ကျွမ်းကျင်မှု (Skills) ခလုတ်လေးများ */
       .skills-list {
         display: flex;
         flex-wrap: wrap;
@@ -70,17 +130,31 @@
       .skills-list li {
         background-color: #3498db;
         color: white;
-        padding: 8px 16px;
+        padding: 8px 18px;
         border-radius: 20px;
         font-size: 0.9rem;
+        font-weight: 500;
+        transition: background-color 0.3s ease;
       }
 
-      /* Project cards */
+      .skills-list li:hover {
+        background-color: #2980b9;
+      }
+
+      /* ပရောဂျက် ကတ်ပြားများ */
       .project-card {
         border: 1px solid #e0e0e0;
         padding: 20px;
-        border-radius: 6px;
+        border-radius: 8px;
         margin-bottom: 15px;
+        transition:
+          border-color 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+
+      .project-card:hover {
+        border-color: #3498db;
+        box-shadow: 0 4px 12px rgba(52, 152, 219, 0.15);
       }
 
       .project-card h3 {
@@ -88,23 +162,28 @@
         color: #2980b9;
       }
 
-      /* Contact button */
-      .btn {
+      .project-link {
         display: inline-block;
-        background-color: #2ecc71;
-        color: white;
-        padding: 10px 20px;
-        text-decoration: none;
-        border-radius: 5px;
         margin-top: 10px;
+        color: #3498db;
+        text-decoration: none;
         font-weight: bold;
+        font-size: 0.9rem;
       }
 
-      .btn:hover {
-        background-color: #27ae60;
+      .project-link:hover {
+        text-decoration: underline;
       }
 
-      /* Bottom Footer section */
+      /* ဆက်သွယ်ရန် ခလုတ်အစု */
+      .contact-buttons {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-top: 15px;
+      }
+
+      /* အောက်ဆုံး Footer အပိုင်း */
       footer {
         text-align: center;
         padding: 20px;
@@ -115,58 +194,111 @@
     </style>
   </head>
   <body>
-    <!-- 1. Introduction Section -->
     <header>
+      <img
+        src="Abstract logo.png"
+        alt="Powell Profile Photo"
+        class="profile-img"
+      />
+
       <h1>Hello, I am Powell</h1>
-      <p>Web Developer & Designer | Learning HTML, CSS, and JavaScript</p>
+      <p>Web Developer & Designer | Learning HTML, CSS, JavaScript & Python</p>
+
+      <!-- Social Media ခလုတ်များ -->
+      <div class="social-links">
+        <a
+          href="https://github.com"
+          target="_blank"
+          class="social-btn btn-github"
+          >GitHub</a
+        >
+        <a
+          href="https://facebook.com"
+          target="_blank"
+          class="social-btn btn-facebook"
+          >Facebook</a
+        >
+        <a href="mailto:powell01100@gmail.com" class="social-btn btn-email"
+          >Email Me</a
+        >
+      </div>
     </header>
 
     <div class="container">
-      <!-- 2. About Me Section -->
       <section id="about">
         <h2>About Me</h2>
         <p>
           I am passionate about web design and programming. Currently, I am
-          learning and building modern, user-friendly websites.
+          learning and building modern, user-friendly websites and exploring
+          Python development.
         </p>
       </section>
 
-      <!-- 3. Skills Section -->
       <section id="skills">
         <h2>Skills</h2>
         <ul class="skills-list">
           <li>HTML5</li>
           <li>CSS3</li>
+          <li>JavaScript</li>
+          <li>Python</li>
           <li>Git & GitHub</li>
           <li>Responsive Design</li>
         </ul>
       </section>
 
-      <!-- 4. Projects Section -->
       <section id="projects">
         <h2>My Projects</h2>
 
         <div class="project-card">
           <h3>1. Personal Portfolio Website</h3>
           <p>
-            A personal portfolio website built from scratch using HTML and CSS.
+            A responsive personal portfolio website built from scratch using
+            HTML and CSS, hosted on GitHub Pages.
           </p>
+          <a
+            href="https://github.com/powder-karma"
+            target="_blank"
+            class="project-link"
+            >View Source Code &rarr;</a
+          >
         </div>
 
         <div class="project-card">
           <h3>2. Restaurant Menu Website</h3>
           <p>A sample responsive menu design created for a small restaurant.</p>
+          <a
+            href="https://github.com/powder-karma"
+            target="_blank"
+            class="project-link"
+            >View on GitHub &rarr;</a
+          >
         </div>
       </section>
 
-      <!-- 5. Contact Section -->
+      <!-- ၅။ ဆက်သွယ်ရန် -->
       <section id="contact">
-        <h2>Contact</h2>
+        <h2>Contact Me</h2>
         <p>
-          If you would like to collaborate on a project, feel free to reach out
-          via email.
+          If you would like to collaborate on a project or say hello, feel free
+          to connect with me through any platform below.
         </p>
-        <a href="mailto:Powell@example.com" class="btn">Send Email</a>
+        <div class="contact-buttons">
+          <a href="mailto:powell01100@gmail.com" class="social-btn btn-email"
+            >Send Email</a
+          >
+          <a
+            href="https://facebook.com"
+            target="_blank"
+            class="social-btn btn-facebook"
+            >Message on Facebook</a
+          >
+          <a
+            href="https://github.com"
+            target="_blank"
+            class="social-btn btn-github"
+            >Follow on GitHub</a
+          >
+        </div>
       </section>
     </div>
 
