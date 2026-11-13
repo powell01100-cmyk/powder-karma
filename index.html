@@ -4,357 +4,155 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Powell | Portfolio</title>
-    <!-- GitHub, Facebook, Telegram, Viber, Email လိုဂို (Icon) များ ခေါ်ယူသုံးစွဲရန် -->
+    <!-- Font Awesome Icons (Icon များ Error မတက်ဘဲ ပေါ်စေရန်) -->
     <link rel="stylesheet" href="https://cloudflare.com" />
-    <style>
-      /* စာမျက်နှာ တစ်ခုလုံးအတွက် အခြေခံ ဒီဇိုင်း */
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      }
-
-      body {
-        background-color: #f4f7f6;
-        color: #333;
-        line-height: 1.6;
-      }
-
-      /* ထိပ်ဆုံး Header အပိုင်း */
-      header {
-        background: linear-gradient(135deg, #2c3e50, #1a252f);
-        color: #ffffff;
-        padding: 60px 20px;
-        text-align: center;
-      }
-
-      /* ပရိုဖိုင် လိုဂိုပုံ အဝိုင်းဒီဇိုင်း */
-      .profile-img {
-        width: 140px;
-        height: 140px;
-        border-radius: 50%;
-        object-fit: cover;
-        border: 4px solid #3498db;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-        margin-bottom: 15px;
-        transition: transform 0.3s ease;
-      }
-
-      .profile-img:hover {
-        transform: scale(1.05);
-      }
-
-      header h1 {
-        font-size: 2.4rem;
-        margin-bottom: 8px;
-      }
-
-      header p {
-        font-size: 1.1rem;
-        color: #bdc3c7;
-        margin-bottom: 22px;
-      }
-
-      /* Social ခလုတ်နှင့် လိုဂို ဒီဇိုင်း */
-      .social-links {
-        display: flex;
-        justify-content: center;
-        gap: 10px;
-        flex-wrap: wrap;
-      }
-
-      .social-btn {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        text-decoration: none;
-        color: #ffffff;
-        padding: 10px 18px;
-        border-radius: 25px;
-        font-size: 0.9rem;
-        font-weight: bold;
-        transition:
-          transform 0.2s ease,
-          opacity 0.2s ease;
-      }
-
-      .social-btn i {
-        font-size: 1.15rem;
-      }
-
-      .social-btn:hover {
-        transform: translateY(-3px);
-        opacity: 0.9;
-      }
-
-      /* ခလုတ် တစ်ခုချင်းစီ၏ အရောင်များ */
-      .btn-github {
-        background-color: #333333;
-        border: 1px solid #555;
-      }
-
-      .btn-facebook {
-        background-color: #1877f2;
-      }
-
-      .btn-telegram {
-        background-color: #0088cc;
-      }
-
-      .btn-viber {
-        background-color: #7360f2;
-      }
-
-      .btn-email {
-        background-color: #2ecc71;
-      }
-
-      /* အလယ်ပိုင်း အချက်အလက်များ */
-      .container {
-        max-width: 900px;
-        margin: 40px auto;
-        padding: 0 20px;
-      }
-
-      section {
-        background: #ffffff;
-        padding: 30px;
-        margin-bottom: 30px;
-        border-radius: 10px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-        transition: transform 0.3s ease;
-      }
-
-      section:hover {
-        transform: translateY(-4px);
-      }
-
-      h2 {
-        color: #2c3e50;
-        border-bottom: 2px solid #3498db;
-        padding-bottom: 10px;
-        margin-bottom: 20px;
-      }
-
-      /* ကျွမ်းကျင်မှု (Skills) ခလုတ်လေးများ */
-      .skills-list {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        list-style: none;
-      }
-
-      .skills-list li {
-        background-color: #3498db;
-        color: white;
-        padding: 8px 18px;
-        border-radius: 20px;
-        font-size: 0.9rem;
-        font-weight: 500;
-        transition: background-color 0.3s ease;
-      }
-
-      .skills-list li:hover {
-        background-color: #2980b9;
-      }
-
-      /* ပရောဂျက် ကတ်ပြားများ */
-      .project-card {
-        border: 1px solid #e0e0e0;
-        padding: 20px;
-        border-radius: 8px;
-        margin-bottom: 15px;
-        transition:
-          border-color 0.3s ease,
-          box-shadow 0.3s ease;
-      }
-
-      .project-card:hover {
-        border-color: #3498db;
-        box-shadow: 0 4px 12px rgba(52, 152, 219, 0.15);
-      }
-
-      .project-card h3 {
-        margin-bottom: 8px;
-        color: #2980b9;
-      }
-
-      .project-link {
-        display: inline-block;
-        margin-top: 10px;
-        color: #3498db;
-        text-decoration: none;
-        font-weight: bold;
-        font-size: 0.9rem;
-      }
-
-      .project-link:hover {
-        text-decoration: underline;
-      }
-
-      /* ဆက်သွယ်ရန် ခလုတ်အစု */
-      .contact-buttons {
-        display: flex;
-        gap: 10px;
-        flex-wrap: wrap;
-        margin-top: 15px;
-      }
-
-      /* အောက်ဆုံး Footer အပိုင်း */
-      footer {
-        text-align: center;
-        padding: 20px;
-        background-color: #2c3e50;
-        color: #bdc3c7;
-        font-size: 0.9rem;
-      }
-    </style>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- ၁။ မိတ်ဆက် နှင့် ပရိုဖိုင် လိုဂို အပိုင်း -->
+    <!-- Header Section -->
     <header>
-      <img
-        src="Abstract logo.png"
-        alt="Powell Profile Logo"
-        class="profile-img"
-      />
+      <div class="container">
+        <!-- Profile ပုံထည့်လိုပါက အောက်ပါ img tag တွင် ဖိုင်နာမည်မှန်အောင် စစ်ထည့်ပါ -->
 
-      <h1>Hello, I am Powell</h1>
-      <p>Web Developer & Designer | Learning HTML, CSS, JavaScript & Python</p>
-
-      <!-- လိုဂိုများ ပါဝင်သော Social Media ခလုတ်များ -->
-      <div class="social-links">
-        <a
-          href="https://github.com/powell01100-cmyk"
-          target="_blank"
-          class="social-btn btn-github"
-        >
-          <i class="fa-brands fa-github"></i> GitHub
-        </a>
-        <a
-          href="https://www.facebook.com/share/1Ee1tvpYV5/"
-          target="_blank"
-          class="social-btn btn-facebook"
-        >
-          <i class="fa-brands fa-facebook"></i> Facebook
-        </a>
-        <a href="@wellpoo" target="_blank" class="social-btn btn-telegram">
-          <i class="fa-brands fa-telegram"></i> Telegram
-        </a>
-        <a
-          href="viber://chat?number=%2B959771448032"
-          target="_blank"
-          class="social-btn btn-viber"
-        >
-          <i class="fa-brands fa-viber"></i> Viber
-        </a>
-        <a
-          href="https://google.com"
-          target="_blank"
-          class="social-btn btn-email"
-        >
-          <i class="fa-solid fa-envelope"></i> Email Me
-        </a>
+        <img
+          src="Abstract logo.png"
+          alt="Powell Profile Logo"
+          class="profile-img"
+        />
+        <h1>Hello, I am <span>Powell</span></h1>
+        <p class="subtitle">
+          Web Developer & Designer | Crafting Clean Code with HTML, CSS, JS &
+          Python
+        </p>
       </div>
     </header>
 
-    <div class="container">
-      <!-- ၂။ ကိုယ်ရေးအကျဉ်း -->
-      <section id="about">
-        <h2>About Me</h2>
-        <p>
-          I am passionate about web design and programming. Currently, I am
-          learning and building modern, user-friendly websites and exploring
-          Python development.
-        </p>
-      </section>
+    <!-- About Me Section -->
+    <section id="about" class="container">
+      <h2>About Me</h2>
+      <p>
+        I am a passionate developer focused on building modern, responsive, and
+        user-friendly websites. Currently, I am expanding my expertise in
+        front-end web technologies and Python programming to turn creative ideas
+        into functional digital solutions.
+      </p>
+    </section>
 
-      <!-- ၃။ ကျွမ်းကျင်မှုများ -->
-      <section id="skills">
-        <h2>Skills</h2>
-        <ul class="skills-list">
-          <li>HTML5</li>
-          <li>CSS3</li>
-          <li>JavaScript</li>
-          <li>Python</li>
-          <li>Git & GitHub</li>
-          <li>Responsive Design</li>
-        </ul>
-      </section>
+    <!-- Skills Section -->
+    <section id="skills" class="container">
+      <h2>Skills</h2>
+      <ul class="skills-list">
+        <li><i class="fa-brands fa-html5"></i> HTML5</li>
+        <li><i class="fa-brands fa-css3-alt"></i> CSS3</li>
+        <li><i class="fa-brands fa-js"></i> JavaScript</li>
+        <li><i class="fa-brands fa-python"></i> Python</li>
+        <li><i class="fa-brands fa-git-alt"></i> Git & GitHub</li>
+        <li><i class="fa-solid fa-mobile-screen"></i> Responsive Design</li>
+      </ul>
+    </section>
 
-      <!-- ၄။ ဖန်တီးထားသော ပရောဂျက်များ -->
-      <section id="projects">
-        <h2>My Projects</h2>
-
+    <!-- Projects Section -->
+    <section id="projects" class="container">
+      <h2>My Projects</h2>
+      <div class="project-grid">
         <div class="project-card">
           <h3>1. Personal Portfolio Website</h3>
           <p>
             A responsive personal portfolio website built from scratch using
             HTML and CSS, hosted on GitHub Pages.
           </p>
-          <a
-            href="https://github.com/powder-karma"
-            target="_blank"
-            class="project-link"
-            >View Source Code &rarr;</a
+          <a href="https://powell01100-cmyk.github.io/powder-karma/" target="_blank" class="btn"
+            >View Source Code →</a
           >
         </div>
-
         <div class="project-card">
           <h3>2. Restaurant Menu Website</h3>
           <p>A sample responsive menu design created for a small restaurant.</p>
-          <a href="https://github.com" target="_blank" class="project-link"
-            >View on GitHub &rarr;</a
+          <a href="https://github.com" target="_blank" class="btn"
+            >View on GitHub →</a
           >
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- ၅။ ဆက်သွယ်ရန် -->
-      <section id="contact">
-        <h2>Contact Me</h2>
-        <p>
-          If you would like to collaborate on a project or say hello, feel free
-          to connect with me through any platform below.
-        </p>
-        <div class="contact-buttons">
-          <a
-            href="https://google.com"
-            target="_blank"
-            class="social-btn btn-email"
-          >
-            <i class="fa-solid fa-envelope"></i> Send Email
-          </a>
-          <a href="@wellpoo" target="_blank" class="social-btn btn-telegram">
-            <i class="fa-brands fa-telegram"></i> Telegram
-          </a>
-          <a
-            href="viber://chat?number=%2B959771448032"
-            target="_blank"
-            class="social-btn btn-viber"
-          >
-            <i class="fa-brands fa-viber"></i> Viber
-          </a>
-          <a
-            href="https://www.facebook.com/share/1Ee1tvpYV5/"
-            target="_blank"
-            class="social-btn btn-facebook"
-          >
-            <i class="fa-brands fa-facebook"></i> Facebook
-          </a>
-          <a
-            href="https://github.com"
-            target="_blank"
-            class="social-btn btn-github"
-          >
-            <i class="fa-brands fa-github"></i> GitHub
-          </a>
-        </div>
-      </section>
-    </div>
+    <!-- Contact Section -->
+    <section id="contact" class="container">
+      <h2>Let's Work Together</h2>
+      <p>
+        Have an exciting project in mind, a question, or just want to connect?
+        I'm always open to new opportunities and collaborations. Reach out
+        directly via any platform below!
+      </p>
 
+      <div class="social-links">
+        <!-- Facebook -->
+        <a
+          href="https://www.facebook.com/share/1Ee1tvpYV5/"
+          target="_blank"
+          class="social-btn facebook"
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"
+            />
+          </svg>
+          Facebook
+        </a>
+
+        <!-- GitHub -->
+        <a
+          href="https://github.com/powell01100-cmyk"
+          target="_blank"
+          class="social-btn github"
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+            />
+          </svg>
+          GitHub
+        </a>
+
+        <!-- Telegram -->
+        <a href="@wellpo" target="_blank" class="social-btn telegram">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"
+            />
+          </svg>
+          Telegram
+        </a>
+
+        <!-- Viber -->
+        <a
+          href="viber://chat?number=%2B959771448032"
+          target="_blank"
+          class="social-btn viber"
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M11.4 0C5.3 0 .5 4.4.5 10.1c0 3.2 1.5 6 4 7.9v4.5l4.2-2.3c.9.2 1.8.3 2.7.3 6.1 0 10.9-4.4 10.9-10.1C22.3 4.4 17.5 0 11.4 0zm5.8 14.3c-.3.8-1.5 1.5-2.1 1.6-.6.1-1.3.2-2.1-.1-.5-.2-1.1-.4-1.9-.8-3.3-1.4-5.4-4.7-5.6-4.9-.2-.2-1.3-1.8-1.3-3.4 0-1.6.8-2.4 1.1-2.7.3-.3.7-.4.9-.4h.7c.2 0 .5-.1.8.6.3.7 1 2.4 1.1 2.6.1.2.1.4 0 .6-.1.2-.2.4-.4.6-.2.2-.4.4-.5.6-.2.2-.4.4-.2.7.2.3.9 1.5 1.9 2.4 1.3 1.2 2.4 1.5 2.7 1.7.3.2.5.1.7-.1.2-.2.8-.9 1-1.3.2-.3.4-.3.7-.2.3.1 1.9.9 2.2 1.1.3.2.6.2.6.4.1.2.1.9-.2 1.7z"
+            />
+          </svg>
+          Viber
+        </a>
+
+        <!-- Email -->
+        <!-- Gmail -->
+        <a href="mailto:powell01100@gmail.com" class="social-btn email">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"
+            />
+          </svg>
+          Gmail
+        </a>
+      </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
-      <p>&copy; 2026 Powell. All rights reserved.</p>
+      <p>© 2026 Powell. All rights reserved.</p>
     </footer>
   </body>
 </html>

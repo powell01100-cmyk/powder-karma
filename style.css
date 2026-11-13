@@ -1,0 +1,164 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #e8f5e9; /* နောက်ခံ အစိမ်းနုရောင် */
+    color: #9a6b00; /* စာသား ရွှေရောင် */
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, #1b4332, #2d6a4f); /* အစိမ်းရင့်ရောင် Header */
+    color: #ffd700; /* တောက်ပသော ရွှေရောင် */
+    text-align: center;
+    padding: 60px 20px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+header h1 span {
+    color: #ffea00; /* နာမည်ကို ပိုတောက်ပသော ရွှေရောင် */
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: #f4d35e;
+}
+
+.profile-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #ffd700; /* ရွှေရောင်ဘောင် */
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+/* Headings */
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #8c6200; /* ခေါင်းစဉ် ရွှေရောင် */
+    border-bottom: 3px solid #d4af37; /* ရွှေရောင် မျဉ်းသား */
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* Skills */
+.skills-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.skills-list li {
+    background: #f1f8e9; /* အစိမ်းနုရောင် ကတ်ပြား */
+    border: 1px solid #d4af37; /* ရွှေရောင် ဘောင်ပါးပါး */
+    color: #8c6200;
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.skills-list li i {
+    color: #b8860b;
+    font-size: 1.2rem;
+}
+
+/* Projects */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.project-card {
+    background: #f1f8e9; /* အစိမ်းနုရောင် ကတ်ပြား */
+    border: 1px solid #d4af37;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: transform 0.2s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-card h3 {
+    margin-bottom: 10px;
+    color: #8c6200;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 15px;
+    color: #b8860b;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn:hover {
+    text-decoration: underline;
+    color: #8c6200;
+}
+
+/* Social Links */
+.social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.social-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    border-radius: 8px;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: opacity 0.2s;
+}
+
+.social-btn:hover {
+    opacity: 0.85;
+}
+
+.facebook { background-color: #1877F2; }
+.github { background-color: #24292e; }
+.telegram { background-color: #0088cc; }
+.viber { background-color: #7360f2; }
+.email { background-color: #ea4335; } /* Gmail အနီရောင် */
+
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #1b4332; /* အစိမ်းရင့်ရောင် Footer */
+    color: #ffd700; /* ရွှေရောင် စာသား */
+    margin-top: 40px;
+}
